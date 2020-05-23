@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewData["Title"] = "Добавление файла";
+}
+
+
+<h3>Выберите файл для загрузки</h3>
+
+<form asp-action="AddImages" asp-controller="Posts" method="post" enctype="multipart/form-data">
+    <input type="file" name="uploads" />
+    <br/>
+    <input type="submit" value="Загрузить" />
+</form>
+
+<hr/>
+
+@foreach (var img in Model)
+{ 
+    <p>@img</p>
+}

@@ -1,0 +1,29 @@
+﻿@model MyOfficialWebGate.Data.Posts.Post
+
+<link rel="stylesheet" href="~/css/style.css" />
+<link rel="stylesheet" href="~/css/responsive.css" />
+
+<div class="row">
+    <div class="col-md-9">
+        <div class="post-content">
+            <h2 class="title-post">@Model.Header</h2>
+            <div class="info">
+                <span class="author vcard">By: <a href="#">@Model.Author</a></span>
+                <span class="cat-links">Story</span>
+                <span class="date">@Model.Date.ToShortDateString()</span>
+            </div>
+
+            @Html.Raw(Model.PostContent);
+
+        </div>
+    </div>
+
+</div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+<script src="~/js/main.js" asp-append-version="true"></script>
+<script src="~/js/plugin.js" asp-append-version="true"></script>
+
+

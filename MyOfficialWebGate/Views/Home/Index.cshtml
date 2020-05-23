@@ -1,0 +1,52 @@
+﻿@model IEnumerable<MyOfficialWebGate.Data.Posts.Post>
+
+
+@{
+    ViewData["Title"] = "Blog";
+}
+
+<link rel="stylesheet" href="~/css/style.css" />
+<link rel="stylesheet" href="~/css/responsive.css" />
+
+<div class="row">
+
+    <div class="col-md-9">
+        @foreach (var post in Model)
+        {
+            <div class="post-content post-item">
+                <h2 class="title-post">@post.Header</h2>
+                <div class="info">
+                    <span class="author vcard">By: <a href="#">@post.Author</a></span>
+                    <span class="cat-links">Story</span>
+                    <span class="date">@post.Date.ToShortDateString()</span>
+                </div>
+                
+                <a asp-action="SinglePost" asp-route-id="@post.Id" class="button-normal yellow">Read More</a>
+            </div>
+            <hr />
+        }
+        <div class="post-content post-item">
+            <h2 class="title-post">WHILE THE MOST WONDERS, WE CREATE!</h2>
+            <div class="info">
+                <span class="author vcard">By: <a href="#">Akmanda</a></span>
+                <span class="cat-links">Story</span>
+                <span class="date">November 18, 2015</span>
+            </div>
+
+            <p>Mauris varius porttitor suscipit. Quisque justo tortor, convallis id elit vitae, posuere ullamcorper ante. Sed in magna viverra, fermentum arcu sit amet, porttitor nulla. Vestibulum vestibulum sem neque, quis egestas ligula consequat nec. Aenean ultrices magna imperdiet felis auctor, at pharetra erat porta. Etiam eleifend imperdiet volutpat. Cras pretium quam vitae rutrum gravida.</p>
+
+            <a href="single-post.html" class="button-normal yellow">Read More</a>
+        </div>
+        <hr />
+    </div>
+
+    <div class="col-md-3">
+        <div class="sidebar">
+            <!-- Что-нибудь слева от лента блога -->
+        </div>
+    </div>
+
+</div>
+
+<script src="~/js/main.js" asp-append-version="true"></script>
+<script src="~/js/plugin.js" asp-append-version="true"></script>
