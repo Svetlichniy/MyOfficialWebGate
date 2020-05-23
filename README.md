@@ -4,5 +4,6 @@ PetProject Блога имеет в основе следущие фреймво
  - Asp.net core MVC  
  - EntityFramework
  - Microsoft Identiy 
- - Bootstrap
+ - Bootstrap.
+ 
 Имеет CRUD операции над объектом "Пост".
